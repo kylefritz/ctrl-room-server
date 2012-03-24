@@ -4,15 +4,28 @@ require 'ohm'
 set :static, true
 set :public_folder, "#{File.dirname(__FILE__)}/public"
 
+before do
+  Ohm.connect
+end
+
+
 get '/' do
+  @users = User.all.all
   #server list of users
   erb :index 
 end
 
 
-get '/event/:user_id' do
+get '/events/:user_id' do
+  @user=User.find(:email =>params[:user_id]).all[0]
+  
+  if @user.nil?
+  	return 404
+  end
+  
+  
   #events for this user
-  erb :index 
+  erb :events 
 end
 
 #
@@ -21,9 +34,7 @@ end
 #
 #
 
-post '/message/:user_id' do
-  Ohm.connect
-  
+post '/message/:user_id' do  
   #find user
   user_id=params[:user_id]
   user = User.find(:email => user_id).all[0]
