@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'ohm'
+require 'json'
 
 set :static, true
 set :public_folder, "#{File.dirname(__FILE__)}/public"
@@ -73,7 +74,9 @@ class Event < Ohm::Model
   index :path
   index :date
   reference :project, Project
-  
+  def to_hash
+    super.merge(:path => path,:date => date)
+  end
 end
 class Project < Ohm::Model
   attribute :name
@@ -84,6 +87,10 @@ class Project < Ohm::Model
   index :name
   index :path
   reference :user, User
+  
+  def to_hash
+    super.merge(:name => name,:path => path, :events => events.all)
+  end
 end
 class User < Ohm::Model
   attribute :email
@@ -91,6 +98,10 @@ class User < Ohm::Model
 
   
   index :email
+  
+  def to_hash
+    super.merge(:email => email, :projects => projects.all)
+  end
 end
 
 
