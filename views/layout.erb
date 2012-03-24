@@ -1,13 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>ctrl-Room</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <title>ctrl-room</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="File Analytics" content="">
+    <meta name="Ryan" content="">
+    
+    <!-- Slider Scripts -->
 
-  <%= yield %>
-</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	</script>
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    
+    
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .navbar {
+      }
+      
+      
+      .navbar-inner {
+      	
+     }
+     
+     .navbar-inner .container {
+      	width:660px
+     }
+     
+          .brand {
+      	color:#ff8800 !important;
+      	font-weight: bold !important;
+      	margin-top: 5px;
+      }
+      
+      .nav .btn{
+      	margin-left:5px;
+      }
+      
+      .nav .icon-white{
+      	margin: 0 5px;
+      }
+      
+      .main {
+      	width:700px;
+      }
+      
+      
+      .row {
+      	min-height: 50px;
+      	height:175px;
+      	
+      	border:1px dotted #ff8800;
+      }
+      
+      h6 {
+      	display:inline;
+      }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+
+   <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          
+          <a class="brand" href="#">ctrl-room</a>
+            <ul class="nav pull-right">
+              <li><a href="#" class="btn btn-inverse"><i class="icon-plus icon-white"></i></a></li>
+              <li><a href="#" class="btn btn-inverse"><i class="icon-cog icon-white"></i></a></li>
+              <li><a href="#" class="btn btn-inverse"><i class="icon-list-alt icon-white"></i></a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="main container">      
+      <%= yield %>
+
+
+      <footer>
+        <p>&copy;</p>
+      </footer>
+
+    </div><!--/container-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- <script src="../assets/js/jquery.js"></script> -->
+    <script src="/js/bootstrap-transition.js"></script>
+    <script src="/js/bootstrap-alert.js"></script>
+    <script src="/js/bootstrap-modal.js"></script>
+    <script src="/js/bootstrap-dropdown.js"></script>
+    <script src="/js/bootstrap-scrollspy.js"></script>
+    <script src="/js/bootstrap-tab.js"></script>
+    <script src="/js/bootstrap-tooltip.js"></script>
+    <script src="/js/bootstrap-popover.js"></script>
+    <script src="/js/bootstrap-button.js"></script>
+    <script src="/js/bootstrap-collapse.js"></script>
+    <script src="/js/bootstrap-carousel.js"></script>
+    <script src="/js/bootstrap-typeahead.js"></script>
+
+  </body>
 </html>
