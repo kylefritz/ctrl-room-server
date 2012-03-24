@@ -5,7 +5,11 @@ set :static, true
 set :public_folder, "#{File.dirname(__FILE__)}/public"
 
 before do
-  Ohm.connect
+ if ENV['REDISTOGO_URL']
+   Ohm.connect :url => ENV['REDISTOGO_URL']
+ else
+   Ohm.connect
+ end
 end
 
 
