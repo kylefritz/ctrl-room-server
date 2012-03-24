@@ -59,7 +59,7 @@ post '/message/:user_id' do
   event=Event.new
   event.path = params[:file_path]
   event.project = project
-  event.date = Time.now.strftime('%Y-%jT%T%:z')
+  event.date = Time.now.getlocal
   event.save
   #recieve messages from watcher
   #save to db
